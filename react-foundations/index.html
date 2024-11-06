@@ -1,22 +1,18 @@
 <html>
   <body>
     <div id="app"></div>
-    <script type="text/javascript">
+    <!-- This is DOM-specific -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <!-- This is allows us to use React with the DOM through DOM-specific methods -->
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- This adds babel a Javascript compiler to enable browsers to understand JSX -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/jsx">
       // Select the div element with 'app' id
       const app = document.getElementById('app');
- 
-      // Create a new H1 element
-      const header = document.createElement('h1');
- 
-      // Create a new text node for the H1 element
-      const text = 'Develop. Preview. Ship.';
-      const headerContent = document.createTextNode(text);
- 
-      // Append the text to the H1 element
-      header.appendChild(headerContent);
- 
-      // Place the H1 element inside the div
-      app.appendChild(header);
+      // This command creates a root to display React components inside a browser DOM node
+      const root = ReactDOM.createRoot(app);
+      root.render(<h1> Develop. Preview. Ship. </h1>);
     </script>
   </body>
 </html>
