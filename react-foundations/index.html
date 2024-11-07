@@ -12,15 +12,16 @@
       const app = document.getElementById('app');
       
       //React Components should be capitilized to identify it from javascript and HTML code
-       function Header() {
-          return <h1>Develop. Preview. Ship.</h1>;
+       function Header({ title }) {
+          console.log(title); // { title: "React" }
+          return <h1>title</h1>;
         }
 
         function HomePage() {
           return (
             <div>
               {/* Nesting the Header component */}
-              <Header />
+              <Header title="React" />
             </div>
           );
         }
@@ -29,7 +30,7 @@
       const root = ReactDOM.createRoot(app);
       
       // React componenents when called should end like this "/>"
-      root.render(<Header />);
+      root.render(<Homepage />);
     </script>
   </body>
 </html>
