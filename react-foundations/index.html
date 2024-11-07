@@ -10,11 +10,25 @@
     <script type="text/jsx">
       // Select the div element with 'app' id
       const app = document.getElementById('app');
+      
+      //React Components should be capitilized to identify it from javascript and HTML code
        function Header() {
           return <h1>Develop. Preview. Ship.</h1>;
         }
+
+        function HomePage() {
+          return (
+            <div>
+              {/* Nesting the Header component */}
+              <Header />
+            </div>
+          );
+        }
+      
       // This command creates a root to display React components inside a browser DOM node
       const root = ReactDOM.createRoot(app);
+      
+      // React componenents when called should end like this "/>"
       root.render(<Header />);
     </script>
   </body>
