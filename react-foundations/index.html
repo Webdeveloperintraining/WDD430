@@ -14,14 +14,20 @@
       //React Components should be capitilized to identify it from javascript and HTML code
        function Header({ title }) {
           console.log(title); // { title: "React" }
-          return <h1>title</h1>;
+          return <h1>{title ? title : 'Default title'}</h1>;
         }
 
         function HomePage() {
+          const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
           return (
             <div>
               {/* Nesting the Header component */}
-              <Header title="React" />
+              <Header title="Develop. Preview. Ship." />
+              <ul>
+                {names.map((name) => (
+                  <li>{name}>{name}</li>
+                ))}
+              </ul>
             </div>
           );
         }
