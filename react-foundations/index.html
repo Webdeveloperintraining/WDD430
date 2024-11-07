@@ -19,6 +19,18 @@
 
         function HomePage() {
           const names = ['Ada Lovelace', 'Grace Hopper', 'Margaret Hamilton'];
+
+          /*It returns an array, and you can access and use those array values inside your component 
+          using array destructuring */
+          const [] = React.useState();
+          
+        function handleClick() {
+            console.log("increment like count")
+            setLikes(likes+1);
+          }
+
+          const [likes] = React.useState(0);
+          
           return (
             <div>
               {/* Nesting the Header component */}
@@ -28,9 +40,11 @@
                   <li>{name}>{name}</li>
                 ))}
               </ul>
+              <button onClick={handleClick}>Like{{likes}}</button>
             </div>
           );
         }
+      
       
       // This command creates a root to display React components inside a browser DOM node
       const root = ReactDOM.createRoot(app);
